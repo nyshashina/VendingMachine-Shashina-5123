@@ -3,7 +3,9 @@ package Domen;
 public class Product {
     private String name;
     private int price;
-    public Product(String name, int price) {
+
+    private int amount;
+    public Product(String name, int price, int amount) throws IllegalArgumentException {
         this.name = name;
 
         if(price > 0)
@@ -12,7 +14,16 @@ public class Product {
         }
         else
         {
-            this.price = 10;
+            throw new IllegalArgumentException("Цена должна быть больше нуля");
+        }
+
+        if(amount < 0)
+        {
+            throw new IllegalArgumentException("Количество не может быть меньше нуля");
+        }
+        else
+        {
+            this.amount = amount;
         }
     }
 
@@ -29,10 +40,22 @@ public class Product {
     }
 
     public void setPrice(int price) {
+
         this.price = price;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
     @Override
     public String toString(){
         return "Product: price = " + this.price + "; name:" + this.name;
     }
+
+
 }

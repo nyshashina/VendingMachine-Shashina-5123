@@ -2,8 +2,8 @@ package Domen;
 public class HotDrink extends Product {
 
     private float temperature;
-    public HotDrink(String name, int price, float temperature) {
-        super(name, price);
+    public HotDrink(String name, int price, int amount, float temperature) {
+        super(name, price, amount);
         this.temperature = temperature;
     }
 

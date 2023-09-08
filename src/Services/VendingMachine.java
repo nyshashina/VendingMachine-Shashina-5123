@@ -7,23 +7,31 @@ import Domen.Product;
 public class VendingMachine {
     private Holder holder;
     private CoinDispenser dispenser;
-    private List<Product> productList;
 
-    public VendingMachine(Holder holder, CoinDispenser dispenser, List<Product> productList) {
+
+    public VendingMachine(Holder holder, CoinDispenser dispenser) {
         this.holder = holder;
         this.dispenser = dispenser;
-        this.productList = productList;
+
     }
 
-    public Product buyProduct(int index) {
-        return productList.get(index);
+    public void buyProduct(int row, int column, int payment) {
+
     }
 
     public void release() {
 
     }
 
-    public List<Product> getProductList() {
-        return productList;
+    public Holder getHolder() {
+        return holder;
+    }
+
+    public Product getProduct(int row, int column) {
+        return holder.getProduct(row, column);
+    }
+
+    public CoinDispenser getDispenser() {
+        return dispenser;
     }
 }
